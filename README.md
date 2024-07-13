@@ -22,6 +22,7 @@ docker run -it --rm --ipc=host -v ./playwright:/app lowcoder-tests
 ```
 
 To configure to which lowcoder instance playwright is connecting, set `LOWCODER_BASE_URL` in `playwright/.env` file.  
+Please be aware that when run with docker, localhost is translated to the actual container, so set IP address of your host if lowcoder is running on your host.
 
 Once tests are finished, you can find html reposrts and videos in `playwright/report` folder.  
 
