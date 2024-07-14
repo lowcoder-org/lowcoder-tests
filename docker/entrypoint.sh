@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "172.17.0.1    lowcoder.internal" >> /etc/hosts
+
 if [ "$(id -u)" = "0" ]; then
-    echo "Running as root, dropping privileges..."
+    echo "Dropping privileges to user playwright..."
     TESTS_UID=`ls -n /app/tests | tail -1 | cut -f3 -d' '`
     TESTS_GID=`ls -n /app/tests | tail -1 | cut -f4 -d' '`
     PUID=`id playwright -u`
@@ -20,7 +22,9 @@ fi;
 
 cd /app
 if [ ! -e "/app/node_modules" ]; then
+  echo "Installing required node modules..."
   gosu playwright npm install
 fi;
 
+echo "Running tests..."
 gosu playwright npx playwright test
