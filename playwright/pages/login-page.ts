@@ -21,26 +21,6 @@ export class LoginPage {
   }
 
 
-/*
-
-test('test', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
-  await page.goto('http://localhost:3000/apps');
-  await page.goto('http://localhost:3000/user/auth/login');
-  await page.getByPlaceholder('Please enter your email').click();
-  await page.getByPlaceholder('Please enter your email').fill('admin@admin.com');
-  await page.getByRole('button', { name: 'Continue' }).click();
-  await page.getByPlaceholder('Please enter your password').click();
-  await page.getByPlaceholder('Please enter your password').fill('admin1234');
-  await page.getByRole('button', { name: 'Sign In' }).click();
-  await page.getByTitle('admin@admin.com', { exact: true }).click();
-  await page.getByText('admin@admin.com', { exact: true }).click();
-  await page.getByText('My Profile').click();
-});
-
-*/
-
-
   async loadPage() {
     await this.page.goto('/user/auth/login');
   }

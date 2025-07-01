@@ -25,9 +25,7 @@ export class SignUpPage {
         await expect(this.page.getByText('Password', { exact: true }), '"password" text input is displayed').toBeVisible();
         await expect(this.page.getByText('Confirm Password'), '"confirm password" text input is displayed').toBeVisible();
         await expect(this.page.getByText('I Have Read and Agree to the'), 'agree to ToS checkbox is displayed').toBeVisible();
-
-        // TODO: uncomment and add testId once it's added in frontend
-        // await expect(this.page.getByTestId(''), 'agree to ToS checkbox is checked').toBeChecked();
+        await expect(this.page.getByTestId('agree-terms-checkbox'), 'agree to ToS checkbox is checked').toBeChecked();
       
         /** Fill inputs and clicn sign up */
         await this.txtEmail.click();
