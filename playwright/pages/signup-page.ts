@@ -20,7 +20,7 @@ export class SignUpPage {
 
     async SignUp(username: string, password: string, repeatPassword: string) {
         /** Check that input descriptions are present and visible */
-        await expect(this.page.locator('div').filter({ hasText: /^Sign Up$/ }), 'page header "Sign Up" is displayed').toBeVisible();
+        await expect(this.page.locator('div').filter({ hasText: /^Sign Up$/ }), '[ Sign Up ] link is displayed').toBeVisible();
         await expect(this.page.getByText('Email:'), '"email" text input is displayed').toBeVisible();
         await expect(this.page.getByText('Password', { exact: true }), '"password" text input is displayed').toBeVisible();
         await expect(this.page.getByText('Confirm Password'), '"confirm password" text input is displayed').toBeVisible();
@@ -51,12 +51,12 @@ export class SignUpPage {
 
         /**
          * Acceptance criteria:
-         * - 'Query Library' link in left side menu is visible
+         * - 'Data Queries' link in left side menu is visible
          * - 'Data Sources' link in left side menu is visible
          * - 'Settings' link in left side menu is visible
          * - 'Trash' link in left side menu is visible
          */
-        await expect(this.page.getByText('Query Library'), 'Left menu "Query Library" is displayed').toBeVisible();
+        await expect(this.page.getByText('Data Queries'), 'Left menu "Data Queries" is displayed').toBeVisible();
         await expect(this.page.getByText('Data Sources'), 'Left menu "Data Sources" is displayed').toBeVisible();
         await expect(this.page.getByText('Settings'), 'Left menu "Settings" is displayed').toBeVisible();
         await expect(this.page.getByText('Trash'), 'Left menu "Thrash" is displayed').toBeVisible();
